@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1", "Assignment1\Assignment1.csproj", "{E7C5A24B-7208-49F5-8BAA-C1D4CD3D180E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1Tests", "..\..\Downloads\raupjc-hw1-tests-2017-master\Assignment1Tests\Assignment1Tests.csproj", "{7C6097BE-7FCE-4CBB-AA81-46E540284C58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment2", "Assignment2\Assignment2.csproj", "{88FEEC9B-F584-42A3-93C8-271C91613B81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E7C5A24B-7208-49F5-8BAA-C1D4CD3D180E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7C5A24B-7208-49F5-8BAA-C1D4CD3D180E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7C5A24B-7208-49F5-8BAA-C1D4CD3D180E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C6097BE-7FCE-4CBB-AA81-46E540284C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C6097BE-7FCE-4CBB-AA81-46E540284C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C6097BE-7FCE-4CBB-AA81-46E540284C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C6097BE-7FCE-4CBB-AA81-46E540284C58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88FEEC9B-F584-42A3-93C8-271C91613B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88FEEC9B-F584-42A3-93C8-271C91613B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88FEEC9B-F584-42A3-93C8-271C91613B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88FEEC9B-F584-42A3-93C8-271C91613B81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
