@@ -48,6 +48,7 @@ namespace Assignment2
         /// <summary >
         /// Determines whether the collection contains a specific value .
         /// </ summary >
-        bool Contains(X item);
+        bool Contains(X item);
+
     }
 }

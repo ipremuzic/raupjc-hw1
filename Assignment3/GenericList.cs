@@ -1,25 +1,27 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace Assignment1
+namespace Assignment3
 {
-    class IntegerList : IIntegerList
+    public class GenericList <X> : IGenericList <X>
     {
-        private int[] _internalStorage;
-        private int _index;   //POSTAVIT GA NA -1 I PREPRAVIT KOD
+        private X[] _internalStorage;
+        private int _index;
         private bool emptyArray = true;
 
-        public IntegerList()
+        public GenericList()
         {
-            _internalStorage=new int[4];
+            _internalStorage = new X[4];
         }
 
-        public IntegerList(int initialSize)
+        public GenericList(int initialSize)
         {
             if (initialSize < 0)
             {
                 initialSize = 4;
             }
-            _internalStorage=new int[initialSize];
+            _internalStorage = new X[initialSize];
         }
 
         public int Count
@@ -34,12 +36,12 @@ namespace Assignment1
             }
         }
 
-        public void Add(int item)
+        public void Add(X item)
         {
-            if (_index+1 >= _internalStorage.Length)
+            if (_index + 1 >= _internalStorage.Length)
             {
-                int[] tmpField = new int[Count * 2];
-                for(int i=0; i<_internalStorage.Length;i++)
+                X[] tmpField = new X[Count * 2];
+                for (int i = 0; i < _internalStorage.Length; i++)
                 {
                     tmpField[i] = _internalStorage[i];
                 }
@@ -54,30 +56,32 @@ namespace Assignment1
             {
                 _internalStorage[++_index] = item;
             }
-            
+
         }
 
         public void Clear()
         {
             _index = 0;
             emptyArray = true;
-            _internalStorage=new int[0];
+            _internalStorage = new X[0];
         }
 
-        public bool Contains(int item)
+        public bool Contains(X item)
         {
             for (int i = 0; i <= _index; i++)
             {
-                if (_internalStorage[i]==item)
+                if (_internalStorage[i] != null)
                 {
-                    return true;
+                    if (_internalStorage[i].Equals(item))
+                    {
+                        return true;
+                    }
                 }
-                
             }
             return false;
         }
 
-        public int GetElement(int index)
+        public X GetElement(int index)
         {
             if (index > _index || index < 0)
             {
@@ -87,11 +91,11 @@ namespace Assignment1
             return _internalStorage[index];
         }
 
-        public int IndexOf(int item)
+        public int IndexOf(X item)
         {
-            for (int i=0; i<=_index;i++)
+            for (int i = 0; i <= _index; i++)
             {
-                if (_internalStorage[i] == item)
+                if (_internalStorage[i].Equals(item))
                 {
                     return i;
                 }
@@ -99,7 +103,7 @@ namespace Assignment1
             return -1;
         }
 
-        public bool Remove(int item)
+        public bool Remove(X item)
         {
             int indexOfItem = this.IndexOf(item);
             try
@@ -110,7 +114,7 @@ namespace Assignment1
             {
                 return false;
             }
-            
+
         }
 
         public bool RemoveAt(int index)
@@ -120,7 +124,7 @@ namespace Assignment1
                 throw new IndexOutOfRangeException();
             }
             int j = 0;
-            int[] tmpField=new int[_internalStorage.Length];
+            X[] tmpField = new X[_internalStorage.Length];
             for (int i = 0; i <= _index; i++)
             {
                 if (i != index)
@@ -131,6 +135,16 @@ namespace Assignment1
             _internalStorage = tmpField;
             _index--;
             return true;
+        }
+
+        public IEnumerator<X> GetEnumerator()
+        {
+            return new GenericListEnumerator <X> (this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
