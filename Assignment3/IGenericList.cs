@@ -2,7 +2,7 @@
 
 namespace Assignment3
 {
-    interface IGenericList <X>:IEnumerable<X>
+    public interface IGenericList <X>:IEnumerable<X>
     {
         /// <summary >
         /// Adds an item to the collection .
