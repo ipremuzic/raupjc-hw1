@@ -5,12 +5,12 @@ namespace Assignment1
     class IntegerList : IIntegerList
     {
         private int[] _internalStorage;
-        private int _index;   
-        private bool emptyArray = true;
+        private int _index = -1;
+
 
         public IntegerList()
         {
-            _internalStorage=new int[4];
+            _internalStorage = new int[4];
         }
 
         public IntegerList(int initialSize)
@@ -19,60 +19,49 @@ namespace Assignment1
             {
                 initialSize = 4;
             }
-            _internalStorage=new int[initialSize];
+            _internalStorage = new int[initialSize];
         }
 
         public int Count
         {
             get
             {
-                if (emptyArray)
-                {
-                    return 0;
-                }
                 return _index + 1;
             }
         }
 
         public void Add(int item)
         {
-            if (_index+1 >= _internalStorage.Length)
+            if (_index + 1 >= _internalStorage.Length)
             {
                 int[] tmpField = new int[Count * 2];
-                for(int i=0; i<_internalStorage.Length;i++)
+                for (int i = 0; i < _internalStorage.Length; i++)
                 {
                     tmpField[i] = _internalStorage[i];
                 }
                 _internalStorage = tmpField;
             }
-            if (emptyArray)
-            {
-                _internalStorage[_index] = item;
-                emptyArray = false;
-            }
-            else
-            {
-                _internalStorage[++_index] = item;
-            }
-            
+
+            _internalStorage[++_index] = item;
+
+
         }
 
         public void Clear()
         {
-            _index = 0;
-            emptyArray = true;
-            _internalStorage=new int[4];
+            _index = -1;
+            _internalStorage = new int[4];
         }
 
         public bool Contains(int item)
         {
             for (int i = 0; i <= _index; i++)
             {
-                if (_internalStorage[i]==item)
+                if (_internalStorage[i] == item)
                 {
                     return true;
                 }
-                
+
             }
             return false;
         }
@@ -89,7 +78,7 @@ namespace Assignment1
 
         public int IndexOf(int item)
         {
-            for (int i=0; i<=_index;i++)
+            for (int i = 0; i <= _index; i++)
             {
                 if (_internalStorage[i] == item)
                 {
@@ -110,7 +99,7 @@ namespace Assignment1
             {
                 return false;
             }
-            
+
         }
 
         public bool RemoveAt(int index)
@@ -120,7 +109,7 @@ namespace Assignment1
                 throw new IndexOutOfRangeException();
             }
             int j = 0;
-            int[] tmpField=new int[_internalStorage.Length];
+            int[] tmpField = new int[_internalStorage.Length];
             for (int i = 0; i <= _index; i++)
             {
                 if (i != index)
