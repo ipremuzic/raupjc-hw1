@@ -5,7 +5,7 @@ namespace Assignment1
     class IntegerList : IIntegerList
     {
         private int[] _internalStorage;
-        private int _index;   //POSTAVIT GA NA -1 I PREPRAVIT KOD
+        private int _index;   
         private bool emptyArray = true;
 
         public IntegerList()
@@ -61,7 +61,7 @@ namespace Assignment1
         {
             _index = 0;
             emptyArray = true;
-            _internalStorage=new int[0];
+            _internalStorage=new int[4];
         }
 
         public bool Contains(int item)
